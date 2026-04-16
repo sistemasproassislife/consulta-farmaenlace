@@ -7,13 +7,18 @@ export default function Home() {
 
   const consultar = async () => {
     try {
-      const res = await fetch(
-        `${process.env.NEXT_PUBLIC_APEX_API_URL}?nrodoc=${cedula}`
-      );
+      const res = await fetch("/api/consulta", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ cedula })
+      });
+
       const json = await res.json();
       setData(json);
     } catch (error) {
-      console.error(error);
+      setData({ error: "Error al consultar", detalle: error.message });
     }
   };
 
