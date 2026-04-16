@@ -66,7 +66,7 @@ export default function Home() {
         </div>
 
         <div style={styles.heroCard}>
-          <h1 style={styles.title}>Consulta de cobertura</h1>
+          <h1 style={styles.title}>Consulta de cobertura Farmaenlace</h1>
           <p style={styles.subtitle}>
             Ingresa el número de cédula para consultar la información disponible.
           </p>
